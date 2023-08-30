@@ -1,0 +1,429 @@
+Index: src/main/java/com/ArtCakeSelenium/pages/LoginRequestDto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ArtCakeSelenium/pages/LoginRequestDto.java b/src/main/java/com/ArtCakeSelenium/pages/LoginRequestDto.java
+new file mode 100644
+--- /dev/null	(date 1693340818304)
++++ b/src/main/java/com/ArtCakeSelenium/pages/LoginRequestDto.java	(date 1693340818304)
+@@ -0,0 +1,18 @@
++
++package com.ArtCakeSelenium.pages;
++
++import lombok.Builder;
++import lombok.Getter;
++import lombok.Setter;
++import lombok.ToString;
++
++@Getter
++@Setter
++@ToString
++@Builder
++public class LoginRequestDto {
++
++    private String username;
++    private String password;
++}
++
+Index: src/main/java/com/ArtCakeSelenium/pages/RegistrationRequestDto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ArtCakeSelenium/pages/RegistrationRequestDto.java b/src/main/java/com/ArtCakeSelenium/pages/RegistrationRequestDto.java
+new file mode 100644
+--- /dev/null	(date 1693339474679)
++++ b/src/main/java/com/ArtCakeSelenium/pages/RegistrationRequestDto.java	(date 1693339474679)
+@@ -0,0 +1,22 @@
++
++package com.ArtCakeSelenium.pages;
++
++import lombok.Builder;
++import lombok.Getter;
++import lombok.Setter;
++import lombok.ToString;
++
++@Getter
++@Setter
++@ToString
++@Builder
++public class RegistrationRequestDto {
++
++    private String fullName;
++    private String email;
++    private String password;
++    private String address;
++    private String phoneNumber;
++
++}
++
+Index: src/main/java/com/ArtCakeSelenium/pages/LoginTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ArtCakeSelenium/pages/LoginTest.java b/src/main/java/com/ArtCakeSelenium/pages/LoginTest.java
+new file mode 100644
+--- /dev/null	(date 1693340939326)
++++ b/src/main/java/com/ArtCakeSelenium/pages/LoginTest.java	(date 1693340939326)
+@@ -0,0 +1,36 @@
++package com.ArtCakeSelenium.pages;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++import org.testng.annotations.BeforeMethod;
++import org.testng.annotations.Test;
++
++import static io.restassured.RestAssured.given;
++
++public class LoginTest {
++    @BeforeMethod
++
++    public void precondition() {
++        RestAssured.baseURI = "http://localhost:8080";
++
++    }
++
++    @Test
++    public void loginSuccessTest() {
++        LoginRequestDto login = LoginRequestDto.builder()
++                .username("exexell@mail.com")
++                .password("Qwerty123!")
++                .build();
++
++        RegistrationResponseDto responseDto = given()
++                .contentType(ContentType.TEXT)
++                .body(login)
++                .when()
++                .post("/login")
++                .then()
++                .assertThat().statusCode(201)
++                .extract().response().as(RegistrationResponseDto.class);
++        System.out.println(responseDto.getId());
++
++    }
++}
+Index: src/main/java/com/ArtCakeSelenium/pages/LoginResponseDto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ArtCakeSelenium/pages/LoginResponseDto.java b/src/main/java/com/ArtCakeSelenium/pages/LoginResponseDto.java
+new file mode 100644
+--- /dev/null	(date 1693340818317)
++++ b/src/main/java/com/ArtCakeSelenium/pages/LoginResponseDto.java	(date 1693340818317)
+@@ -0,0 +1,16 @@
++package com.ArtCakeSelenium.pages;
++
++import lombok.Builder;
++import lombok.Getter;
++import lombok.Setter;
++import lombok.ToString;
++
++@Getter
++@Setter
++@ToString
++@Builder
++public class LoginResponseDto {
++    private String username;
++    private String password;
++}
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8cf19fce-cd5a-4dac-b73d-c113495788ba\" name=\"Changes\" comment=\"Initial project\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"FinalForAPI\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"ROOT_SYNC\" value=\"SYNC\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SpLRTqQYkdQOTdfmAdqOSWOgRL\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/saino/OneDrive/Desktop/FINAL/ArtCake_QA&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\saino\\IdeaProjects\\FinalForAPI\" />\r\n      <recent name=\"C:\\Users\\saino\\IdeaProjects\\FinalForAPI\\src\\test\\resources\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\saino\\IdeaProjects\\FinalForAPI\\src\\test\\resources\\features\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.check_atomic\">\r\n    <configuration name=\"check_atomic\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.tools.check_atomic\" />\r\n      <module name=\"FinalForAPI.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.tools.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RAAddContactTests.addNewContactSuccessTest\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinalForAPI.test\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.phonebook.restAssuredTests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.phonebook.restAssuredTests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.phonebook.restAssuredTests.RAAddContactTests\" />\r\n      <option name=\"METHOD_NAME\" value=\"addNewContactSuccessTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RALoginTests.loginWithWrongFormatEmailTest\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinalForAPI.test\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.phonebook.restAssuredTests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.phonebook.restAssuredTests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.phonebook.restAssuredTests.RALoginTests\" />\r\n      <option name=\"METHOD_NAME\" value=\"loginWithWrongFormatEmailTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RALoginTests.loginWithWrongFormatEmailTest2\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinalForAPI.test\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.phonebook.restAssuredTests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.phonebook.restAssuredTests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.phonebook.restAssuredTests.RALoginTests\" />\r\n      <option name=\"METHOD_NAME\" value=\"loginWithWrongFormatEmailTest2\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"com.ArtCake.restAssuredTests\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinalForAPI.test\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.ArtCake.restAssuredTests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.ArtCake.restAssuredTests\" />\r\n      <option name=\"TEST_OBJECT\" value=\"PACKAGE\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.check_atomic\" />\r\n        <item itemvalue=\"TestNG.RALoginTests.loginWithWrongFormatEmailTest2\" />\r\n        <item itemvalue=\"TestNG.RALoginTests.loginWithWrongFormatEmailTest\" />\r\n        <item itemvalue=\"TestNG.RAAddContactTests.addNewContactSuccessTest\" />\r\n        <item itemvalue=\"TestNG.com.ArtCake.restAssuredTests\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8cf19fce-cd5a-4dac-b73d-c113495788ba\" name=\"Changes\" comment=\"\" />\r\n      <created>1689838568290</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1689838568290</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 093402e3c6ee953bd869f27bfbed22ab5bbe70b8)
++++ b/.idea/workspace.xml	(date 1693343926966)
+@@ -5,6 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="8cf19fce-cd5a-4dac-b73d-c113495788ba" name="Changes" comment="Initial project">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/ArtCakeSelenium/pages/LoginRequestDto.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/ArtCakeSelenium/pages/LoginResponseDto.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/ArtCakeSelenium/pages/LoginTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/ArtCakeSelenium/pages/RARegistrationTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/ArtCakeSelenium/pages/RegistrationRequestDto.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/ArtCakeSelenium/pages/RegistrationResponseDto.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/tools/check_atomic.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -81,7 +88,7 @@
+       <recent name="C:\Users\saino\IdeaProjects\FinalForAPI\src\test\resources\features" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.check_atomic">
++  <component name="RunManager" selected="JUnit.TestRunner">
+     <configuration name="check_atomic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.tools.check_atomic" />
+       <module name="FinalForAPI.main" />
+@@ -91,6 +98,21 @@
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="FinalForAPI.test" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.ArtCake.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="com.ArtCake" />
++      <option name="MAIN_CLASS_NAME" value="com.ArtCake.TestRunner" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -143,22 +165,6 @@
+       <option name="MAIN_CLASS_NAME" value="com.phonebook.restAssuredTests.RALoginTests" />
+       <option name="METHOD_NAME" value="loginWithWrongFormatEmailTest2" />
+       <option name="TEST_OBJECT" value="METHOD" />
+-      <properties />
+-      <listeners />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="com.ArtCake.restAssuredTests" type="TestNG" temporary="true" nameIsGenerated="true">
+-      <module name="FinalForAPI.test" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.ArtCake.restAssuredTests.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <option name="PACKAGE_NAME" value="com.ArtCake.restAssuredTests" />
+-      <option name="TEST_OBJECT" value="PACKAGE" />
+       <properties />
+       <listeners />
+       <method v="2">
+@@ -167,11 +173,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="JUnit.TestRunner" />
+         <item itemvalue="Application.check_atomic" />
+         <item itemvalue="TestNG.RALoginTests.loginWithWrongFormatEmailTest2" />
+         <item itemvalue="TestNG.RALoginTests.loginWithWrongFormatEmailTest" />
+         <item itemvalue="TestNG.RAAddContactTests.addNewContactSuccessTest" />
+-        <item itemvalue="TestNG.com.ArtCake.restAssuredTests" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -191,7 +197,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="main" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+Index: src/main/java/com/ArtCakeSelenium/pages/RegistrationResponseDto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ArtCakeSelenium/pages/RegistrationResponseDto.java b/src/main/java/com/ArtCakeSelenium/pages/RegistrationResponseDto.java
+new file mode 100644
+--- /dev/null	(date 1693339328666)
++++ b/src/main/java/com/ArtCakeSelenium/pages/RegistrationResponseDto.java	(date 1693339328666)
+@@ -0,0 +1,22 @@
++package com.ArtCakeSelenium.pages;
++
++import lombok.Builder;
++import lombok.Getter;
++import lombok.Setter;
++import lombok.ToString;
++
++@Getter
++@Setter
++@ToString
++@Builder
++public class RegistrationResponseDto {
++    private int id;
++    private String fullName;
++    private String email;
++    private String address;
++    private String phoneNumber;
++    private String role;
++    private String state;
++
++}
++
+Index: src/main/java/com/tools/check_atomic.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/tools/check_atomic.java b/src/main/java/com/tools/check_atomic.java
+new file mode 100644
+--- /dev/null	(date 1693337398960)
++++ b/src/main/java/com/tools/check_atomic.java	(date 1693337398960)
+@@ -0,0 +1,94 @@
++package com.tools;
++
++import org.w3c.dom.Document;
++import org.w3c.dom.Element;
++
++import javax.xml.parsers.DocumentBuilderFactory;
++import javax.xml.parsers.ParserConfigurationException;
++import javax.xml.transform.Transformer;
++import javax.xml.transform.TransformerException;
++import javax.xml.transform.TransformerFactory;
++import javax.xml.transform.dom.DOMSource;
++import javax.xml.transform.stream.StreamResult;
++import java.io.File;
++import java.util.ArrayList;
++import java.util.List;
++
++public class check_atomic {
++    public static void main(String[] args) {
++        // Списки возможных значений параметров
++        String[] operatingSystems = {"Win 11", "Win 10", "Win 8.1", "Win 8", "Win 7", "Linux", "Mac OS"};
++        String[] browsers = {"Chrome", "Opera", "Firefox", "Safari", "Edge"};
++        String[] resolutions = {"8k", "4k", "2k", "FHD", "HD"};
++        String[] screenSizes = {"64 inch", "32 inch", "27 inch", "24 inch", "22 inch", "17.3 inch", "15.6 inch", "14 inch", "13 inch"};
++
++        // Создание всех возможных комбинаций параметров
++        List<String[]> combinations = new ArrayList<>();
++        for (String os : operatingSystems) {
++            for (String browser : browsers) {
++                for (String resolution : resolutions) {
++                    for (String screenSize : screenSizes) {
++                        combinations.add(new String[]{os, browser, resolution, screenSize});
++                    }
++                }
++            }
++        }
++
++        // Вывод заголовка таблицы
++        System.out.println("| #  | ОС         | Браузер  | Разрешение | Размер экрана |");
++        System.out.println("|----|------------|----------|------------|--------------|");
++
++        // Вывод строк таблицы с номерами и пустыми результатами
++        for (int index = 0; index < combinations.size(); index++) {
++            String[] combo = combinations.get(index);
++            String os = combo[0];
++            String browser = combo[1];
++            String resolution = combo[2];
++            String screenSize = combo[3];
++            System.out.printf("| %2d | %10s | %8s | %11s | %13s |                   \n",
++                    index + 1, os, browser, resolution, screenSize);
++        }
++
++        // ... (код для генерации комбинаций параметров)
++
++        try {
++            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
++            Document doc = dbFactory.newDocumentBuilder().newDocument();
++
++            Element rootElement = doc.createElement("TestTable");
++            doc.appendChild(rootElement);
++
++            for (int index = 0; index < combinations.size(); index++) {
++                String[] combo = combinations.get(index);
++                String os = combo[0];
++                String browser = combo[1];
++                String resolution = combo[2];
++                String screenSize = combo[3];
++
++                Element testEntry = doc.createElement("TestEntry");
++                rootElement.appendChild(testEntry);
++
++                testEntry.setAttribute("ID", String.valueOf(index + 1));
++                testEntry.setAttribute("OS", os);
++                testEntry.setAttribute("Browser", browser);
++                testEntry.setAttribute("Resolution", resolution);
++                testEntry.setAttribute("ScreenSize", screenSize);
++            }
++
++            File outputFile = new File("1.xlsm");
++            TransformerFactory transformerFactory = TransformerFactory.newInstance();
++            Transformer transformer = transformerFactory.newTransformer();
++            DOMSource source = new DOMSource(doc);
++
++            StreamResult result = new StreamResult(outputFile);  // Вывод в файл
++            transformer.transform(source, result);
++
++        } catch (ParserConfigurationException | TransformerException e) {
++            e.printStackTrace();
++        }
++
++    }
++}
++
++
++
+Index: src/main/java/com/ArtCakeSelenium/pages/RARegistrationTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ArtCakeSelenium/pages/RARegistrationTest.java b/src/main/java/com/ArtCakeSelenium/pages/RARegistrationTest.java
+new file mode 100644
+--- /dev/null	(date 1693340553719)
++++ b/src/main/java/com/ArtCakeSelenium/pages/RARegistrationTest.java	(date 1693340553719)
+@@ -0,0 +1,39 @@
++package com.ArtCakeSelenium.pages;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++import org.testng.annotations.BeforeMethod;
++import org.testng.annotations.Test;
++
++import static io.restassured.RestAssured.given;
++
++public class RARegistrationTest {
++    @BeforeMethod
++
++    public void precondition() {
++        RestAssured.baseURI = "http://localhost:8080";
++
++    }
++
++    @Test
++    public void loginSuccessTest() {
++        RegistrationRequestDto login = RegistrationRequestDto.builder()
++                .fullName("Billy Smith")
++                .email("exexell@mail.com")
++                .password("Qwerty123!")
++                .address("Town - Berlin, Street - Sonnenallee, House Number - 17")
++                .phoneNumber("+4912123123")
++                .build();
++
++        RegistrationResponseDto responseDto = given()
++                .contentType(ContentType.TEXT)
++                .body(login)
++                .when()
++                .post("/login")
++                .then()
++                .assertThat().statusCode(201)
++                .extract().response().as(RegistrationResponseDto.class);
++        System.out.println(responseDto.getId());
++
++    }
++}
