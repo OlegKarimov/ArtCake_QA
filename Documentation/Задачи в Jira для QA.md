@@ -28,3 +28,22 @@ My tasks for JIRA:
 1. Создания проэкта на двух фреймоворках Selenium&Cucumber. Это сделано. Create a project with using two frameworks Selenium&Cucumber. It`s done.
 2. Написания документации для бэкенда. со статус кодом 200.201.400.401.403.404.500. Write a documentation for backend with status-codes 200,201,400,401,404.
 3. Автоматизация тестов для АПИ. Automation Testing for API.
+
+
+
+# Edgar Arushanyan
+
+My tasks for JIRA:
+1. Create QA for sign out
+2. Create QA Test Case for sign out
+3. Create QA to test all details about product. The User can't delete,update or add the Cake. Only Manager.
+4. Create QA for login
+5. Create QA Test Case for login
+6. Create STD for Manager(with diagram)
+7. Create STD for Confectioner(with diagram)
+8. User Swagger Test(GET)
+   endpoints:
+    GET/api/users/role/{role}Getting all Users by Role
+    GET/api/users/meGetting profile
+    GET/api/users/manager/orders
+    GET/api/users/confectioner/orders
