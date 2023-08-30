@@ -41,7 +41,7 @@ My tasks for JIRA:
 5. Create QA Test Case for login
 6. Create STD for Manager(with diagram)
 7. Create STD for Confectioner(with diagram)
-8. User Swagger Test(GET)
+8. (SELENIUM) User Swagger Test(GET)
    endpoints:
     GET/api/users/role/{role}Getting all Users by Role
     GET/api/users/meGetting profile
