@@ -11,7 +11,8 @@ import lombok.ToString;
 @Builder
 public class RegistrationResponseDto {
     private int id;
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private String email;
     private String town;
     private String street;
