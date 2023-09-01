@@ -1,4 +1,4 @@
-package com.ArtCake.stepDefinitions;
+package com.ArtCake.restAssuredTests;
 
 
 import com.ArtCake.dto.RegistrationRequestDto;
@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 
 
 public class RARegistrationTests {
@@ -23,8 +22,9 @@ public class RARegistrationTests {
     @Test
     public void registrationSuccessTest() {
         RegistrationRequestDto login = RegistrationRequestDto.builder()
-                .fullName("ark Smith")
-                .email("arke@mail.com")
+                .firstName("Lor")
+                .lastName("Jackson")
+                .email("siimple@mail.com")
                 .password("Qwerty123!")
                 .town("Berlin")
                 .street("Sonnenallee")
@@ -47,7 +47,8 @@ public class RARegistrationTests {
     @Test
     public void registrationWithWrongFormatEmailTest(){
         RegistrationRequestDto auth = RegistrationRequestDto.builder()
-                .fullName("ark Smith")
+                .firstName("Lor")
+                .lastName("Jackson")
                 .email("arkemail.com")
                 .password("Qwerty123!")
                 .town(" Berlin")
@@ -62,7 +63,9 @@ public class RARegistrationTests {
                 .when()
                 .post("api/registration")
                 .then()
-                .assertThat().statusCode(400);
+                .assertThat().statusCode(400)
+                .extract().response().prettyPrint();
+
 
 
     }
