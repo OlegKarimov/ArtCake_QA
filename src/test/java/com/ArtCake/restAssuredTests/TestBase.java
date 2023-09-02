@@ -7,7 +7,7 @@ public class TestBase {
 
     @BeforeMethod
     public void precondition(){
-        RestAssured.baseURI ="http://localhost:8080/";
+        RestAssured.baseURI ="http://localhost:8080";
 
     }
 }
