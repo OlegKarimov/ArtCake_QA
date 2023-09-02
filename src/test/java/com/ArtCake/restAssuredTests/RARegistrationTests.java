@@ -35,7 +35,7 @@ public class RARegistrationTests {
                 .contentType(ContentType.JSON)
                 .body(login)
                 .when()
-                .post("api/registration")
+                .post("/api/registration")
                 .then()
                 .assertThat().statusCode(201)
                .extract().response().as(RegistrationResponseDto.class);
@@ -59,7 +59,7 @@ public class RARegistrationTests {
                 .contentType(ContentType.JSON)
                 .body(auth)
                 .when()
-                .post("api/registration")
+                .post("/api/registration")
                 .then()
                 .assertThat().statusCode(400)
                 .extract().response().prettyPrint();
