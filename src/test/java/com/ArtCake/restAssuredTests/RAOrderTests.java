@@ -29,7 +29,7 @@ public class RAOrderTests extends TestBase {
                 .formParam("username", username)
                 .formParam("password", password)
                 .when()
-                .post("/login");
+                .post("/api/login");
 
         Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
         given()
@@ -40,7 +40,6 @@ public class RAOrderTests extends TestBase {
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
                 .then()
                 .assertThat().statusCode(201);
-
 
     }
 
@@ -61,7 +60,6 @@ public class RAOrderTests extends TestBase {
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
                 .then()
                 .assertThat().statusCode(403);
-
 
     }
 

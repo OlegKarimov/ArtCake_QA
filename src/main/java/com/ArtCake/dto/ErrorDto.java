@@ -12,11 +12,7 @@ import lombok.ToString;
 @Builder
 public class ErrorDto {
 private String errors;
-/*
-    private String field;
-    private Object message;
-    private String rejectedValue;
-*/
+
 }
 
 

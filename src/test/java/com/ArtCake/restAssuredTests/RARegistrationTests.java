@@ -16,7 +16,6 @@ public class RARegistrationTests {
 
     public void precondition() {
         RestAssured.baseURI = "http://localhost:8080";
-
     }
 
     @Test
@@ -42,7 +41,6 @@ public class RARegistrationTests {
                .extract().response().as(RegistrationResponseDto.class);
         System.out.println(responseDto.getRole());
 
-
     }
     @Test
     public void registrationWithWrongFormatEmailTest(){
@@ -65,8 +63,6 @@ public class RARegistrationTests {
                 .then()
                 .assertThat().statusCode(400)
                 .extract().response().prettyPrint();
-
-
 
     }
 }
