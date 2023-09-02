@@ -29,9 +29,11 @@ public class RAOrderTests extends TestBase {
                 .formParam("username", username)
                 .formParam("password", password)
                 .when()
-                .post("/login");
+                .post("/api/login");
 
         Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
+        System.out.println(sessionCookie);
+
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
