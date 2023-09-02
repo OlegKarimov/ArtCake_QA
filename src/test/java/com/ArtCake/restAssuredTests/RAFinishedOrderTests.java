@@ -1,16 +1,17 @@
 package com.ArtCake.restAssuredTests;
 
-
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 
 public class RAFinishedOrderTests extends TestBase {
+
+
     @Test
     public void MovingOrderToFinishedSuccessfulTest() {
+
         int orderId = 2;
         String username = ("konditerow@gmail.com");
         String password = ("Confectioner000!");
@@ -31,6 +32,7 @@ public class RAFinishedOrderTests extends TestBase {
                 .put("/api/orders/" + orderId + "/done?" + orderId)
                 .then()
                 .assertThat().statusCode(200);
+
     }
     @Test
 
