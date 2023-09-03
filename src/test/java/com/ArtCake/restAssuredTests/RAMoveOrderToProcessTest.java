@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAOrdersAcceptedTest extends TestBase {
+public class RAMoveOrderToProcessTest extends TestBase {
 
     private static String orderId = "";
 
@@ -48,7 +48,7 @@ public class RAOrdersAcceptedTest extends TestBase {
     }
 
     @Test
-    public void acceptNewOrderAsClientFailTest() {
+    public void moveOrderToProcessFailTest() {
         String username = ("client@gmail.com");
         String password = ("Client123!");
 
@@ -76,7 +76,7 @@ public class RAOrdersAcceptedTest extends TestBase {
     }
 
     @Test
-    public void acceptNewOrderTest() {
+    public void moveOrderToProcessSuccessTest() {
         String username = ("manager@mail.com");
         String password = ("qwerty123!");
 
