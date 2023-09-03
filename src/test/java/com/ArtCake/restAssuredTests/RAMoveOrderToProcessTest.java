@@ -1,10 +1,9 @@
 package com.ArtCake.restAssuredTests;
 
-import com.ArtCake.dto.OrderRequestDto;
 import com.ArtCake.dto.MoveOrderToProcessDto;
+import com.ArtCake.dto.OrderRequestDto;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
-import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -15,26 +14,16 @@ public class RAMoveOrderToProcessTest extends TestBase {
     private static String orderId = "";
 
     @BeforeMethod
-    public void precondition(){
-        String username = ("client@gmail.com");
-        String password = ("Client123!");
+    public void precondition() {
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client123!");
 
         int cakeID = 1;
+
         OrderRequestDto orderRequestDto = OrderRequestDto.builder()
                 .count(3)
                 .deadline("2023-10-10")
                 .clientWishes("Make in blue and white colours")
                 .build();
-
-
-        Response loginResponse = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
 
         orderId = given()
                 .contentType(ContentType.JSON)
@@ -49,17 +38,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
 
     @Test
     public void moveOrderToProcessFailTest() {
-        String username = ("client@gmail.com");
-        String password = ("Client123!");
-
-        Response loginResponse = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client123!");
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)
@@ -77,17 +56,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
 
     @Test
     public void moveOrderToProcessSuccessTest() {
-        String username = ("manager@mail.com");
-        String password = ("qwerty123!");
-
-        Response loginResponse = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
+        Cookie sessionCookie = loginWithUser("manager@mail.com", "qwerty123!");
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)
@@ -105,17 +74,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
 
     @Test
     public void moveOrderToProcessFail404Test() {
-        String username = ("manager@mail.com");
-        String password = ("qwerty123!");
-
-        Response loginResponse = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
+        Cookie sessionCookie = loginWithUser("manager@mail.com", "qwerty123!");
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)
