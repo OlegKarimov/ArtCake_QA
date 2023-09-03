@@ -62,7 +62,7 @@ public class RAOrderTests extends TestBase {
                 .when()
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
                 .then()
-                .assertThat().statusCode(403);
+                .assertThat().statusCode(401);
 
 
     }
