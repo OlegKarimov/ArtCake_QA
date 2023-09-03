@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 public class RACakeAddToAssortment extends TestBase{
-    private Cookie sessionCookie = loginWithUser("client@gmail.com", "Client123!");
-   private Cookie sessionCookieManager = loginWithUser("manager@mail.com", "qwerty123!");
+    private Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+   private Cookie sessionCookieManager = loginWithUser("manager@mail.com", "Manager007!");
 
    private String requestBody = "{\n" +
-            "  \"name\": \"blueberry-cupcake\",\n" +
+            "  \"name\": \"blueberry-testing\",\n" +
             "  \"ingredients\": \"milk,egg,salt...\",\n" +
             "  \"price\": 70.5,\n" +
             "  \"category\": \"CUPCAKES\",\n" +
