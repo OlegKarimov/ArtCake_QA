@@ -102,4 +102,32 @@ public class RAMoveOrderToProcessTest extends TestBase {
                 .then()
                 .assertThat().statusCode(200);
     }
+
+    @Test
+    public void moveOrderToProcessFail404Test() {
+        String username = ("manager@mail.com");
+        String password = ("qwerty123!");
+
+        Response loginResponse = given()
+                .contentType(ContentType.URLENC)
+                .formParam("username", username)
+                .formParam("password", password)
+                .when()
+                .post("/api/login");
+
+        Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
+
+        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
+                .confectionerId(2)
+                .build();
+
+        given()
+                .contentType(ContentType.JSON)
+                .cookie(sessionCookie)
+                .body(dto)
+                .when()
+                .put("/api/orders/" + -100 + "?orderId=" + -100)
+                .then()
+                .assertThat().statusCode(404);
+    }
 }

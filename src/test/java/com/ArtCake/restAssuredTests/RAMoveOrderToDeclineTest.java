@@ -76,6 +76,29 @@ public class RAMoveOrderToDeclineTest extends TestBase {
     }
 
     @Test
+    public void moveOrderToDeclineFail404Test() {
+        String username = ("konditerow@gmail.com");
+        String password = ("Confectioner000!");
+
+        Response loginResponse = given()
+                .contentType(ContentType.URLENC)
+                .formParam("username", username)
+                .formParam("password", password)
+                .when()
+                .post("/api/login");
+
+        Cookie sessionCookie = loginResponse.getDetailedCookie("JSESSIONID");
+
+        given()
+                .contentType(ContentType.JSON)
+                .cookie(sessionCookie)
+                .when()
+                .put("/api/orders/" + -100 + "/decline?orderId=" + -100)
+                .then()
+                .assertThat().statusCode(404);
+    }
+
+    @Test
     public void moveOrderToDeclineSuccessTest() {
         String username = ("konditerow@gmail.com");
         String password = ("Confectioner000!");
