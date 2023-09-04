@@ -16,8 +16,8 @@ public class RegistrationRequestDto {
     private String email;
     private String password;
     private String town;
+    private String zipCode;
     private String street;
     private Integer houseNumber;
     private String phoneNumber;
-
 }
