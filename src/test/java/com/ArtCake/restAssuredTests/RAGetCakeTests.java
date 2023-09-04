@@ -1,13 +1,11 @@
 package com.ArtCake.restAssuredTests;
 
 import com.ArtCake.dto.CakeResponseDto;
-import com.ArtCake.dto.RegistrationResponseDto;
-import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAGetCakeTests {
+public class RAGetCakeTests extends TestBase {
     @Test
     public void getCakeByIDSuccessfulTest() {
         int cakeID = 2;

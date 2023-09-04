@@ -1,22 +1,13 @@
 package com.ArtCake.restAssuredTests;
 
-
 import com.ArtCake.dto.RegistrationRequestDto;
 import com.ArtCake.dto.RegistrationResponseDto;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 
 
-public class RARegistrationTests {
-    @BeforeMethod
-
-    public void precondition() {
-        RestAssured.baseURI = "http://localhost:8080";
-    }
+public class RARegistrationTests extends TestBase{
 
     @Test
     public void registrationSuccessTest() {
