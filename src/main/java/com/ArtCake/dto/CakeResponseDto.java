@@ -16,6 +16,4 @@ public class CakeResponseDto {
     private Integer price;
     private String category;
     private String state;
-
-
 }
