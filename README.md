@@ -13,7 +13,7 @@ BackPoints
 
 - Confectioner
     - `konditerow@gmail.com`
-    - `Manager007!`
+    - `Qwerty123!`
 
 - Client
   - `client@gmail.com`

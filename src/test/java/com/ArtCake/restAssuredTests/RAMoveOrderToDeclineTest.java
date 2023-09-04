@@ -15,7 +15,7 @@ public class RAMoveOrderToDeclineTest extends TestBase {
 
     @BeforeMethod
     public void precondition() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client123!");
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
 
         int cakeID = 1;
 
@@ -38,7 +38,7 @@ public class RAMoveOrderToDeclineTest extends TestBase {
 
     @Test
     public void moveOrderToDeclineFailTest() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client123!");
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)
@@ -56,7 +56,7 @@ public class RAMoveOrderToDeclineTest extends TestBase {
 
     @Test
     public void moveOrderToDeclineFail404Test() {
-        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Confectioner000!");
+        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Qwerty123!");
 
         given()
                 .contentType(ContentType.JSON)
@@ -69,7 +69,7 @@ public class RAMoveOrderToDeclineTest extends TestBase {
 
     @Test
     public void moveOrderToDeclineSuccessTest() {
-        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Confectioner000!");
+        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Qwerty123!");
 
         given()
                 .contentType(ContentType.JSON)
