@@ -43,7 +43,6 @@ public class RAOrderTests extends TestBase {
                 .then()
                 .assertThat().statusCode(201);
 
-
     }
 
     @Test
@@ -63,7 +62,6 @@ public class RAOrderTests extends TestBase {
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
                 .then()
                 .assertThat().statusCode(403);
-
 
     }
 

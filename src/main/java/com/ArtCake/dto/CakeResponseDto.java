@@ -9,12 +9,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class CakeDto {
+public class CakeResponseDto {
     private String id;
     private String name;
-    private String lastName;
-    private String email;
-    private String phone;
-    private String address;
-    private String description;
+    private String ingredients;
+    private Integer price;
+    private String category;
+    private String state;
+
+
 }
