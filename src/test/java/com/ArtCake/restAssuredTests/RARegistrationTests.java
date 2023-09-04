@@ -6,7 +6,6 @@ import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-
 public class RARegistrationTests extends TestBase{
 
     @Test
@@ -56,6 +55,5 @@ public class RARegistrationTests extends TestBase{
                 .then()
                 .assertThat().statusCode(400)
                 .extract().response().prettyPrint();
-
     }
 }

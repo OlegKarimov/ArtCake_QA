@@ -20,5 +20,4 @@ public class RegistrationRequestDto {
     private String street;
     private Integer houseNumber;
     private String phoneNumber;
-
 }

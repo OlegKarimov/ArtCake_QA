@@ -21,5 +21,4 @@ public class RegistrationResponseDto {
     private String phoneNumber;
     private String role;
     private String state;
-
 }
