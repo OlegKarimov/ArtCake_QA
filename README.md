@@ -9,8 +9,12 @@ BackPoints
 
 - Manager
     - `manager@mail.com`
-    -  `qwerty123!`
+    -  `Manager007!`
 
 - Confectioner
     - `konditerow@gmail.com`
-    - `Confectioner000!`
+    - `Manager007!`
+
+- Client
+  - `client@gmail.com`
+  - `Client007!`
