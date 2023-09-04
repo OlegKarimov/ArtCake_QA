@@ -12,11 +12,12 @@ public class RARegistrationTests extends TestBase{
     @Test
     public void registrationSuccessTest() {
         RegistrationRequestDto login = RegistrationRequestDto.builder()
-                .firstName("Lor")
+                .firstName("Lorry")
                 .lastName("Jackson")
-                .email("siimple@mail.com")
+                .email("siiimple@mail.com")
                 .password("Qwerty123!")
                 .town("Berlin")
+                .zipCode("22331")
                 .street("Sonnenallee")
                 .houseNumber(17)
                 .phoneNumber("+4917612930456")
@@ -41,6 +42,7 @@ public class RARegistrationTests extends TestBase{
                 .email("arkemail.com")
                 .password("Qwerty123!")
                 .town(" Berlin")
+                .zipCode("22331")
                 .street("Sonnenallee")
                 .houseNumber(17)
                 .phoneNumber("+4917612930456")

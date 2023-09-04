@@ -15,6 +15,7 @@ public class RegistrationResponseDto {
     private String lastName;
     private String email;
     private String town;
+    private String zipCode;
     private String street;
     private Integer houseNumber;
     private String phoneNumber;
