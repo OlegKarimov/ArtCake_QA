@@ -12,5 +12,5 @@ import java.util.List;
 @ToString
 @Builder
 public class GetAllCakesDto {
-    private List<CakeDto> contacts;
+    private List<CakeResponseDto> contacts;
 }
