@@ -4,7 +4,6 @@ import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -13,7 +12,7 @@ public class RALogOut extends TestBase {
 
     @Test
     public void successLogOut() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client123!");
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
 
         Response response = given()
                 .contentType(ContentType.JSON)
