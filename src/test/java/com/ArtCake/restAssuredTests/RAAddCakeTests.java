@@ -5,6 +5,8 @@ import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
 
+import java.util.UUID;
+
 import static io.restassured.RestAssured.given;
 
 public class RAAddCakeTests extends TestBase {
@@ -14,7 +16,7 @@ public class RAAddCakeTests extends TestBase {
         Cookie sessionCookie = loginAsManager();
 
         CakeCreateRequestDto dto = CakeCreateRequestDto.builder()
-                .name("blueberry-cupcake")
+                .name("blueberry-cupcake-" + UUID.randomUUID())
                 .ingredients("milk,egg,salt...")
                 .category("CUPCAKES")
                 .price(70.5)

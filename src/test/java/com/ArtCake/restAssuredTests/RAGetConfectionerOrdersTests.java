@@ -9,10 +9,9 @@ public class RAGetConfectionerOrdersTests extends TestBase {
 
     @Test
     public void getAllOrdersAsConfectioner200() {
-
         int page = 0;
 
-        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Qwerty123!");
+        Cookie sessionCookie = loginAsConditioner();
 
         given()
                 .cookie(sessionCookie)
@@ -26,7 +25,6 @@ public class RAGetConfectionerOrdersTests extends TestBase {
 
     @Test
     public void getAllOrdersAsConfectioner401() {
-
         int page = 0;
 
         given()
