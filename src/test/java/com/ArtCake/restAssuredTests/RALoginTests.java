@@ -13,12 +13,12 @@ public class RALoginTests extends TestBase {
 
     public void precondition() {
         RestAssured.baseURI = "http://localhost:8080/api";
-
     }
+
     @Test
     public void loginWithValidCredentialsTest() {
         String username = "client@gmail.com";
-        String password = "Client123!";
+        String password = "Client007!";
 
         Response response = given()
                 .contentType(ContentType.URLENC)
