@@ -1,38 +1,38 @@
-package com.ArtCake.restAssuredUsersTests;
+package com.ArtCake.restAssuredTests;
 import com.ArtCake.Users.dto.OrderRequestDto;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
-import static com.ArtCake.restAssuredUsersTests.TestBase.loginWithUser;
+
 import static io.restassured.RestAssured.given;
 
-public class RAGetManagerOrdersTests {
+public class RAGetConfectionerOrdersTests extends TestBase {
 
     @Test
-    public void getAllOrdersAsManager200() {
+    public void getAllOrdersAsConfectioner200() {
 
-        int page = 2;
+        int page = 0;
 
-        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Qwerty123!");
 
         given()
                 .cookie(sessionCookie)
                 .queryParam("page", page)
                 .when()
-                .get("/api/users/manager/orders")
+                .get("/api/users/confectioner/orders")
                 .then()
                 .assertThat().statusCode(200)
                 .extract().response().as(OrderRequestDto.class);
     }
 
     @Test
-    public void getAllOrdersAsManager401() {
+    public void getAllOrdersAsConfectioner401() {
 
         int page = 0;
 
         given()
                 .queryParam("page", page)
                 .when()
-                .get("/api/users/manager/orders")
+                .get("/api/users/confectioner/orders")
                 .then()
                 .assertThat().statusCode(401)
                 .extract().response().as(OrderRequestDto.class);

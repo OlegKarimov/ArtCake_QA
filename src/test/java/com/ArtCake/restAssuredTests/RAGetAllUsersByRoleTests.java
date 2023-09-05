@@ -1,4 +1,4 @@
-package com.ArtCake.restAssuredUsersTests;
+package com.ArtCake.restAssuredTests;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
