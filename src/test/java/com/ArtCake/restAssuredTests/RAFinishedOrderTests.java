@@ -2,17 +2,15 @@ package com.ArtCake.restAssuredTests;
 
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 
 public class RAFinishedOrderTests extends TestBase {
 
     @Test
     public void MovingOrderToFinishedSuccessfulTest() {
+        Cookie sessionCookie = loginAsConditioner();
         int orderId = 2;
-        String username = ("konditerow@gmail.com");
-        String password = ("Qwerty123!");
-
-Cookie sessionCookie=loginWithUser(username,password);
 
         given()
                 .cookie(sessionCookie)
@@ -21,15 +19,13 @@ Cookie sessionCookie=loginWithUser(username,password);
                 .put("/api/orders/" + orderId + "/done?" + orderId)
                 .then()
                 .assertThat().statusCode(200);
+
     }
+
     @Test
-
-    public void MovingOrderToFinishedWithUserData(){
+    public void MovingOrderToFinishedWithUserData() {
+        Cookie sessionCookie = loginAsClient();
         int orderId = 2;
-        String username = ("client@gmail.com");
-        String password = ("Client007!");
-
-        Cookie sessionCookie=loginWithUser(username,password);
 
         given()
                 .cookie(sessionCookie)
@@ -42,11 +38,8 @@ Cookie sessionCookie=loginWithUser(username,password);
 
     @Test
     public void MovingOrderToFinishedWithUnexcitingOrderIdTest() {
+        Cookie sessionCookie = loginAsConditioner();
         int orderId = 777;
-        String username = ("konditerow@gmail.com");
-        String password = ("Qwerty123!");
-
-        Cookie sessionCookie=loginWithUser(username,password);
 
         given()
                 .cookie(sessionCookie)

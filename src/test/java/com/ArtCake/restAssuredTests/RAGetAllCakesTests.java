@@ -1,31 +1,35 @@
 package com.ArtCake.restAssuredTests;
 
-import com.ArtCake.dto.CakeResponseDto;
+import io.restassured.http.ContentType;
+import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 
-public class RAGetAllCakesTests {
+public class RAGetAllCakesTests extends TestBase {
     @Test
-    public void getCakeByIDSuccessfulTest() {
-        int page = 2;
+    public void getAllCakesSuccess() {
+        Cookie sessionCookie = loginAsConditioner();
 
-       given()
-                .queryParam("page", page)
+        given()
+                .contentType(ContentType.JSON)
+                .cookie(sessionCookie)
                 .when()
-                .get("/api/cakes")
+                .get("/api/cakes?page=1")
                 .then()
-                .assertThat().statusCode(200)
-                .extract().response().as(CakeResponseDto.class);
+                .assertThat().statusCode(200);
     }
 
     @Test
-    public void getCakeByIDTestError404() {
-        String page = "abc";
+    public void getAllCakesFail400() {
+        Cookie sessionCookie = loginAsConditioner();
+
         given()
-                .queryParam("page", page)
+                .contentType(ContentType.JSON)
+                .cookie(sessionCookie)
                 .when()
-                .get("/cakes/."+page)
+                .get("/api/cakes")
                 .then()
-                .assertThat().statusCode(404);
+                .assertThat().statusCode(400);
     }
 }

@@ -1,23 +1,24 @@
 package com.ArtCake.restAssuredTests;
 
+
 import com.ArtCake.dto.RegistrationRequestDto;
+import com.ArtCake.dto.RegistrationResponseDto;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
-import java.util.Date;
+import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 
-public class RARegistrationTests extends TestBase{
+
+public class RARegistrationTests {
 
     @Test
     public void registrationSuccessTest() {
-        String uniqueEmail = "user" + new Date().getTime() + "@example.com"; // Генерируем уникальный email с помощью временной метки
-
-        RegistrationRequestDto registrationRequest = RegistrationRequestDto.builder()
-                .firstName("Lorry")
+        RegistrationRequestDto login = RegistrationRequestDto.builder()
+                .firstName("Lor")
                 .lastName("Jackson")
-                .email(uniqueEmail)
+                .email(UUID.randomUUID() + "@mail.com")
                 .password("Qwerty123!")
                 .town("Berlin")
                 .zipCode("22331")
@@ -26,24 +27,26 @@ public class RARegistrationTests extends TestBase{
                 .phoneNumber("+4917612930456")
                 .build();
 
-        given()
+        RegistrationResponseDto responseDto = given()
                 .contentType(ContentType.JSON)
-                .body(registrationRequest)
+                .body(login)
                 .when()
                 .post("/api/registration")
                 .then()
                 .assertThat().statusCode(201)
-                .extract().response().prettyPrint();
+                .extract().response().as(RegistrationResponseDto.class);
+
+        System.out.println(responseDto.getRole());
     }
+
     @Test
-    public void registrationWithWrongFormatEmailTest(){
+    public void registrationWithWrongFormatEmailTest() {
         RegistrationRequestDto auth = RegistrationRequestDto.builder()
                 .firstName("Lor")
                 .lastName("Jackson")
                 .email("arkemail.com")
                 .password("Qwerty123!")
                 .town(" Berlin")
-                .zipCode("22331")
                 .street("Sonnenallee")
                 .houseNumber(17)
                 .phoneNumber("+4917612930456")

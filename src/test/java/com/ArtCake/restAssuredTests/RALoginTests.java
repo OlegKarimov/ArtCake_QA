@@ -1,45 +1,43 @@
 package com.ArtCake.restAssuredTests;
 
-import io.restassured.RestAssured;
+
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.testng.annotations.BeforeMethod;
+import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertNotNull;
+
 
 public class RALoginTests extends TestBase {
 
-    @BeforeMethod
-    public void precondition() {
-        RestAssured.baseURI = "http://localhost:8080/api";
+    @Test
+    public void loginSuccessAsClientTest() {
+        Cookie sessionCookie = loginAsClient();
+        assertNotNull(sessionCookie);
     }
 
     @Test
-    public void loginWithValidCredentialsTest() {
-        String username = "client@gmail.com";
-        String password = "Client007!";
-
-        Response response = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/login");
-
-        response.then().assertThat().statusCode(200);
-    	}
+    public void loginSuccessAsConditionerTest() {
+        Cookie sessionCookie = loginAsConditioner();
+        assertNotNull(sessionCookie);
+    }
 
     @Test
-    public void loginWithInvalidCredentialsTest() {
-        String username = "client@gmail.com";
-        String invalidPassword = "InvalidPass123";
-
-        Response response = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", invalidPassword)
-                .when()
-                .post("/login");
-        response.then().assertThat().statusCode(401);
-    	}
+    public void loginSuccessAsManagerTest() {
+        Cookie sessionCookie = loginAsManager();
+        assertNotNull(sessionCookie);
     }
+
+    @Test
+    public void loginFailTest() {
+        given()
+                .contentType(ContentType.URLENC)
+                .formParam("username", "wrong.email@gmail.com")
+                .formParam("password", "213")
+                .when()
+                .post("/api/login")
+                .then()
+                .assertThat().statusCode(401);
+    }
+}

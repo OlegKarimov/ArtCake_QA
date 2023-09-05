@@ -8,9 +8,9 @@ import java.util.Date;
 
 import static io.restassured.RestAssured.given;
 
-public class RACakeAddToAssortmentTests extends TestBase{
-    private Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
-    private Cookie sessionCookieManager = loginWithUser("manager@mail.com", "Manager007!");
+public class RACakeAddToAssortmentTests extends TestBase {
+    private Cookie sessionCookie = loginAsClient();
+    private Cookie sessionCookieManager = loginAsManager();
 
     @Test
     public void createCakeWithUniqueName() {

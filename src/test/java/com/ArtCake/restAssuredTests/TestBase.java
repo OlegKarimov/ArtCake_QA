@@ -10,9 +10,16 @@ import static io.restassured.RestAssured.given;
 
 public class TestBase {
 
-    @BeforeMethod
-    public void precondition(){
-        RestAssured.baseURI ="http://localhost:8080";
+    public static Cookie loginAsClient() {
+        return loginWithUser("client@gmail.com", "Client007!");
+    }
+
+    public static Cookie loginAsManager() {
+        return loginWithUser("manager@mail.com", "Manager007!");
+    }
+
+    public static Cookie loginAsConditioner() {
+        return loginWithUser("konditerow@gmail.com", "Qwerty123!");
     }
 
     public static Cookie loginWithUser(String email, String password) {
@@ -24,5 +31,10 @@ public class TestBase {
                 .post("/api/login");
 
         return loginResponse.getDetailedCookie("JSESSIONID");
+    }
+
+    @BeforeMethod
+    public void precondition() {
+        RestAssured.baseURI = "http://localhost:8080";
     }
 }
