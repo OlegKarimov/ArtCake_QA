@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAMoveOrderToDeclineTest extends TestBase {
+public class RAMoveOrderToDeclineTests extends TestBase {
 
     private static String orderId = "";
 

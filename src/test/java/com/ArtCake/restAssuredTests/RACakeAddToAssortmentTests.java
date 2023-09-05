@@ -1,6 +1,5 @@
 package com.ArtCake.restAssuredTests;
 
-
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
@@ -9,7 +8,7 @@ import java.util.Date;
 
 import static io.restassured.RestAssured.given;
 
-public class RACakeAddToAssortment extends TestBase{
+public class RACakeAddToAssortmentTests extends TestBase{
     private Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
     private Cookie sessionCookieManager = loginWithUser("manager@mail.com", "Manager007!");
 

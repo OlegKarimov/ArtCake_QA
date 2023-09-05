@@ -1,5 +1,6 @@
 package com.ArtCake.restAssuredTests;
 
+import com.ArtCake.dto.MoveOrderToProcessDto;
 import com.ArtCake.dto.OrderRequestDto;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
@@ -8,7 +9,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAGettingProfileTest extends TestBase {
+public class RAMoveOrderToProcessTests extends TestBase {
 
     private static String orderId = "";
 
@@ -35,30 +36,57 @@ public class RAGettingProfileTest extends TestBase {
                 .extract().body().jsonPath().getString("id");
     }
 
-
     @Test
-    public void gettingProfileFail404Test() {
+    public void moveOrderToProcessFailTest() {
         Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+
+        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
+                .confectionerId(2)
+                .build();
 
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
+                .body(dto)
                 .when()
-                .get("/api/users/me" + -100 + "/decline?orderId=" + -100)
+                .put("/api/orders/" + orderId + "?orderId=" + orderId)
                 .then()
-                .assertThat().statusCode(404);
+                .assertThat().statusCode(403);
     }
 
     @Test
-    public void gettingProfileSuccessTest() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+    public void moveOrderToProcessSuccessTest() {
+        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+
+        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
+                .confectionerId(2)
+                .build();
 
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
+                .body(dto)
                 .when()
-                .get("/api/users/me")
+                .put("/api/orders/" + orderId + "?orderId=" + orderId)
                 .then()
                 .assertThat().statusCode(200);
+    }
+
+    @Test
+    public void moveOrderToProcessFail404Test() {
+        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+
+        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
+                .confectionerId(2)
+                .build();
+
+        given()
+                .contentType(ContentType.JSON)
+                .cookie(sessionCookie)
+                .body(dto)
+                .when()
+                .put("/api/orders/" + -100 + "?orderId=" + -100)
+                .then()
+                .assertThat().statusCode(404);
     }
 }

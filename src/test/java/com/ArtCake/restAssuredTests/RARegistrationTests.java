@@ -1,19 +1,23 @@
 package com.ArtCake.restAssuredTests;
 
 import com.ArtCake.dto.RegistrationRequestDto;
-import com.ArtCake.dto.RegistrationResponseDto;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
+
+import java.util.Date;
+
 import static io.restassured.RestAssured.given;
 
 public class RARegistrationTests extends TestBase{
 
     @Test
     public void registrationSuccessTest() {
-        RegistrationRequestDto login = RegistrationRequestDto.builder()
+        String uniqueEmail = "user" + new Date().getTime() + "@example.com"; // Генерируем уникальный email с помощью временной метки
+
+        RegistrationRequestDto registrationRequest = RegistrationRequestDto.builder()
                 .firstName("Lorry")
                 .lastName("Jackson")
-                .email("siiimple@mail.com")
+                .email(uniqueEmail)
                 .password("Qwerty123!")
                 .town("Berlin")
                 .zipCode("22331")
@@ -22,16 +26,14 @@ public class RARegistrationTests extends TestBase{
                 .phoneNumber("+4917612930456")
                 .build();
 
-        RegistrationResponseDto responseDto = given()
+        given()
                 .contentType(ContentType.JSON)
-                .body(login)
+                .body(registrationRequest)
                 .when()
                 .post("/api/registration")
                 .then()
                 .assertThat().statusCode(201)
-               .extract().response().as(RegistrationResponseDto.class);
-        System.out.println(responseDto.getRole());
-
+                .extract().response().prettyPrint();
     }
     @Test
     public void registrationWithWrongFormatEmailTest(){
