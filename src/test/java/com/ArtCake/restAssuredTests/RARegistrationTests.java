@@ -3,29 +3,25 @@ package com.ArtCake.restAssuredTests;
 
 import com.ArtCake.dto.RegistrationRequestDto;
 import com.ArtCake.dto.RegistrationResponseDto;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 
 
 public class RARegistrationTests {
-    @BeforeMethod
-
-    public void precondition() {
-        RestAssured.baseURI = "http://localhost:8080";
-    }
 
     @Test
     public void registrationSuccessTest() {
         RegistrationRequestDto login = RegistrationRequestDto.builder()
                 .firstName("Lor")
                 .lastName("Jackson")
-                .email("siimple@mail.com")
+                .email(UUID.randomUUID() + "@mail.com")
                 .password("Qwerty123!")
                 .town("Berlin")
+                .zipCode("22331")
                 .street("Sonnenallee")
                 .houseNumber(17)
                 .phoneNumber("+4917612930456")
@@ -38,12 +34,13 @@ public class RARegistrationTests {
                 .post("/api/registration")
                 .then()
                 .assertThat().statusCode(201)
-               .extract().response().as(RegistrationResponseDto.class);
-        System.out.println(responseDto.getRole());
+                .extract().response().as(RegistrationResponseDto.class);
 
+        System.out.println(responseDto.getRole());
     }
+
     @Test
-    public void registrationWithWrongFormatEmailTest(){
+    public void registrationWithWrongFormatEmailTest() {
         RegistrationRequestDto auth = RegistrationRequestDto.builder()
                 .firstName("Lor")
                 .lastName("Jackson")
@@ -63,6 +60,5 @@ public class RARegistrationTests {
                 .then()
                 .assertThat().statusCode(400)
                 .extract().response().prettyPrint();
-
     }
 }

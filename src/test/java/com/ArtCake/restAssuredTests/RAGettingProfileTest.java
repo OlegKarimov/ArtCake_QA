@@ -10,11 +10,9 @@ import static io.restassured.RestAssured.given;
 
 public class RAGettingProfileTest extends TestBase {
 
-    private static String orderId = "";
-
     @BeforeMethod
     public void precondition() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+        Cookie sessionCookie = loginAsClient();
 
         int cakeID = 1;
 
@@ -24,21 +22,20 @@ public class RAGettingProfileTest extends TestBase {
                 .clientWishes("Make in blue and white colours")
                 .build();
 
-        orderId = given()
+        given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
                 .body(orderRequestDto)
                 .when()
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
                 .then()
-                .assertThat().statusCode(201)
-                .extract().body().jsonPath().getString("id");
+                .assertThat().statusCode(201);
     }
 
 
     @Test
     public void gettingProfileFail404Test() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+        Cookie sessionCookie = loginAsClient();
 
         given()
                 .contentType(ContentType.JSON)
@@ -51,7 +48,7 @@ public class RAGettingProfileTest extends TestBase {
 
     @Test
     public void gettingProfileSuccessTest() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+        Cookie sessionCookie = loginAsClient();
 
         given()
                 .contentType(ContentType.JSON)

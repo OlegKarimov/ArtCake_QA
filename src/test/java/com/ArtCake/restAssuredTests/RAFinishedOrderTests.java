@@ -1,29 +1,16 @@
 package com.ArtCake.restAssuredTests;
 
-import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 
 public class RAFinishedOrderTests extends TestBase {
 
-
     @Test
     public void MovingOrderToFinishedSuccessfulTest() {
-
+        Cookie sessionCookie = loginAsConditioner();
         int orderId = 2;
-        String username = ("konditerow@gmail.com");
-        String password = ("Confectioner000!");
-
-        Response response = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = response.getDetailedCookie("JSESSIONID");
 
         given()
                 .cookie(sessionCookie)
@@ -34,21 +21,11 @@ public class RAFinishedOrderTests extends TestBase {
                 .assertThat().statusCode(200);
 
     }
+
     @Test
-
-    public void MovingOrderToFinishedWithUserData(){
+    public void MovingOrderToFinishedWithUserData() {
+        Cookie sessionCookie = loginAsClient();
         int orderId = 2;
-        String username = ("client@gmail.com");
-        String password = ("Client123!");
-
-        Response response = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = response.getDetailedCookie("JSESSIONID");
 
         given()
                 .cookie(sessionCookie)
@@ -61,18 +38,8 @@ public class RAFinishedOrderTests extends TestBase {
 
     @Test
     public void MovingOrderToFinishedWithUnexcitingOrderIdTest() {
+        Cookie sessionCookie = loginAsConditioner();
         int orderId = 777;
-        String username = ("konditerow@gmail.com");
-        String password = ("Confectioner000!");
-
-        Response response = given()
-                .contentType(ContentType.URLENC)
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("/api/login");
-
-        Cookie sessionCookie = response.getDetailedCookie("JSESSIONID");
 
         given()
                 .cookie(sessionCookie)
