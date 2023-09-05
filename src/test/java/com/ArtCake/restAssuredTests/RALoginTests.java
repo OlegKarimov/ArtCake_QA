@@ -10,7 +10,6 @@ import static io.restassured.RestAssured.given;
 public class RALoginTests extends TestBase {
 
     @BeforeMethod
-
     public void precondition() {
         RestAssured.baseURI = "http://localhost:8080/api";
     }
