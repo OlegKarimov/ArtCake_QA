@@ -1,11 +1,10 @@
-package com.ArtCake.restAssuredUsersTests;
+package com.ArtCake.restAssuredTests;
 import com.ArtCake.Users.dto.OrderRequestDto;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
-import static com.ArtCake.restAssuredUsersTests.TestBase.loginWithUser;
 import static io.restassured.RestAssured.given;
 
-public class RAGetClientOrdersTests {
+public class RAGetClientOrdersTests extends TestBase{
 
     @Test
     public void getAllOrdersForClientAsClient200() {
