@@ -1,6 +1,5 @@
 package com.ArtCake.restAssuredTests;
 
-import com.ArtCake.dto.MoveOrderToProcessDto;
 import com.ArtCake.dto.OrderRequestDto;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
@@ -9,13 +8,13 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAMoveOrderToDeclineTest extends TestBase {
+public class RAGettingProfileTests extends TestBase {
 
     private static String orderId = "";
 
     @BeforeMethod
     public void precondition() {
-        Cookie sessionCookie = loginAsClient();
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
 
         int cakeID = 1;
 
@@ -36,46 +35,29 @@ public class RAMoveOrderToDeclineTest extends TestBase {
                 .extract().body().jsonPath().getString("id");
     }
 
-    @Test
-    public void moveOrderToDeclineFailTest() {
-        Cookie sessionCookie = loginAsClient();
-
-        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
-                .confectionerId(2)
-                .build();
-
-        given()
-                .contentType(ContentType.JSON)
-                .cookie(sessionCookie)
-                .body(dto)
-                .when()
-                .put("/api/orders/" + orderId + "?orderId=" + orderId)
-                .then()
-                .assertThat().statusCode(403);
-    }
 
     @Test
-    public void moveOrderToDeclineFail404Test() {
-        Cookie sessionCookie = loginAsConditioner();
+    public void gettingProfileFail404Test() {
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
 
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
                 .when()
-                .put("/api/orders/" + -100 + "/decline?orderId=" + -100)
+                .get("/api/users/me" + -100 + "/decline?orderId=" + -100)
                 .then()
                 .assertThat().statusCode(404);
     }
 
     @Test
-    public void moveOrderToDeclineSuccessTest() {
-        Cookie sessionCookie = loginAsConditioner();
+    public void gettingProfileSuccessTest() {
+        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
 
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
                 .when()
-                .put("/api/orders/" + orderId + "/decline?orderId=" + orderId)
+                .get("/api/users/me")
                 .then()
                 .assertThat().statusCode(200);
     }

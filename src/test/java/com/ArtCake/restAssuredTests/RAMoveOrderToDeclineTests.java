@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAMoveOrderToProcessTest extends TestBase {
+public class RAMoveOrderToDeclineTests extends TestBase {
 
     private static String orderId = "";
 
@@ -37,7 +37,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
     }
 
     @Test
-    public void moveOrderToProcessFailTest() {
+    public void moveOrderToDeclineFailTest() {
         Cookie sessionCookie = loginAsClient();
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
@@ -55,38 +55,28 @@ public class RAMoveOrderToProcessTest extends TestBase {
     }
 
     @Test
-    public void moveOrderToProcessSuccessTest() {
-        Cookie sessionCookie = loginAsManager();
-
-        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
-                .confectionerId(2)
-                .build();
+    public void moveOrderToDeclineFail404Test() {
+        Cookie sessionCookie = loginAsConditioner();
 
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
-                .body(dto)
                 .when()
-                .put("/api/orders/" + orderId + "?orderId=" + orderId)
+                .put("/api/orders/" + -100 + "/decline?orderId=" + -100)
                 .then()
-                .assertThat().statusCode(200);
+                .assertThat().statusCode(404);
     }
 
     @Test
-    public void moveOrderToProcessFail404Test() {
-        Cookie sessionCookie = loginAsManager();
-
-        MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
-                .confectionerId(2)
-                .build();
+    public void moveOrderToDeclineSuccessTest() {
+        Cookie sessionCookie = loginAsConditioner();
 
         given()
                 .contentType(ContentType.JSON)
                 .cookie(sessionCookie)
-                .body(dto)
                 .when()
-                .put("/api/orders/" + -100 + "?orderId=" + -100)
+                .put("/api/orders/" + orderId + "/decline?orderId=" + orderId)
                 .then()
-                .assertThat().statusCode(404);
+                .assertThat().statusCode(200);
     }
 }

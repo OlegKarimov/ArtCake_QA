@@ -39,9 +39,8 @@ My tasks for JIRA:
 3. Create QA to test all details about product. The User can't delete,update or add the Cake. Only Manager.
 4. Create QA for login
 5. Create QA Test Case for login
-6. Create STD for Manager(with diagram)
-7. Create STD for Confectioner(with diagram)
-8. (SELENIUM) User Swagger Test(GET)
+6. Create [STDiagram](https://drive.google.com/file/d/1jCZeOHxK_pK9AB5j_re0mh_bIjYfGGzv/view?usp=sharing) for Manager, Confectioner, Client, Cake and Order. 
+7. (Rest Assuered API Tests) User Swagger Test(GET)
    endpoints:
     GET/api/users/role/{role}Getting all Users by Role
     GET/api/users/meGetting profile

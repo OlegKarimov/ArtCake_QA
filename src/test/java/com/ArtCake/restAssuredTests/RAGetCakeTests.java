@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAGetCakeTests {
+public class RAGetCakeTests extends TestBase {
     @Test
     public void getCakeByIDSuccessfulTest() {
         int cakeID = 2;
