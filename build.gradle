@@ -14,16 +14,22 @@ dependencies {
     implementation 'org.testng:testng:7.8.0'
     implementation 'io.rest-assured:rest-assured:5.3.1'
     implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'org.projectlombok:lombok:1.18.28'
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
     implementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
     implementation 'io.cucumber:cucumber-java:7.13.0'
     implementation 'io.cucumber:cucumber-junit:7.13.0'
-    implementation 'ch.qos.logback:logback-classic:1.4.8'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
 }
+
 
 test {
     useTestNG()
 }
+
 task qa1(type:Test) {
     useTestNG() {
         def suite1 = project.hasProperty("suite1")
