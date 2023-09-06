@@ -9,13 +9,10 @@ import static io.restassured.RestAssured.given;
 
 
 public class RAOrderTests extends TestBase {
-
     @Test
     public void creatingOrderSuccessfulTest() {
+        Cookie sessionCookie = loginAsClient();
 
-        String username = ("client@gmail.com");
-        String password = ("Client007!");
-        Cookie sessionCookie=loginWithUser(username,password);
         int cakeID = 1;
         OrderRequestDto orderRequestDto = OrderRequestDto.builder()
                 .count(3)
@@ -25,7 +22,7 @@ public class RAOrderTests extends TestBase {
 
         given()
                 .contentType(ContentType.JSON)
-               .cookie(sessionCookie)
+                .cookie(sessionCookie)
                 .body(orderRequestDto)
                 .when()
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
@@ -37,12 +34,12 @@ public class RAOrderTests extends TestBase {
     @Test
     public void addNewOrderWithoutAuthenticationTest() {
         int cakeID = 1;
+
         OrderRequestDto orderRequestDto = OrderRequestDto.builder()
                 .count(3)
                 .deadline("2023-10-10")
                 .clientWishes("Make in blue and white colours")
                 .build();
-
 
         given()
                 .contentType(ContentType.JSON)
@@ -51,7 +48,6 @@ public class RAOrderTests extends TestBase {
                 .post("/api/orders/cakes/" + cakeID + "?cakeId=" + cakeID)
                 .then()
                 .assertThat().statusCode(401);
-
     }
 
 }

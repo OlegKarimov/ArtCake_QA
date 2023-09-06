@@ -1,17 +1,18 @@
 package com.ArtCake.restAssuredTests;
 import com.ArtCake.dto.OrderRequestDto;
+
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 
-public class RAGetClientOrdersTests extends TestBase{
+public class RAGetClientOrdersTests extends TestBase {
 
     @Test
     public void getAllOrdersForClientAsClient200() {
-
         int page = 0;
 
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+        Cookie sessionCookie = loginAsClient();
 
         given()
                 .cookie(sessionCookie)
@@ -26,10 +27,9 @@ public class RAGetClientOrdersTests extends TestBase{
 
     @Test
     public void getAllOrdersForClientAsManager200() {
-
         int page = 0;
 
-        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+        Cookie sessionCookie = loginAsManager();
 
         given()
                 .cookie(sessionCookie)
@@ -44,10 +44,9 @@ public class RAGetClientOrdersTests extends TestBase{
 
     @Test
     public void getAllOrdersForClientAsConfectioner200() {
-
         int page = 0;
 
-        Cookie sessionCookie = loginWithUser("konditerow@gmail.com", "Qwerty123!");
+        Cookie sessionCookie = loginAsConditioner();
 
         given()
                 .cookie(sessionCookie)

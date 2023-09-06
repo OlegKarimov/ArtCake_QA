@@ -4,7 +4,7 @@ import com.ArtCake.dto.CakeResponseDto;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-public class RACakesGetByCategory {
+public class RACakesGetByCategoryTests {
     @Test
     public void getCakeByCategoryTest200() {
         String category = "MOUSSE";

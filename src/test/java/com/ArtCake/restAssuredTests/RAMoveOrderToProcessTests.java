@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAMoveOrderToProcessTest extends TestBase {
+public class RAMoveOrderToProcessTests extends TestBase {
 
     private static String orderId = "";
 
     @BeforeMethod
     public void precondition() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+        Cookie sessionCookie = loginAsClient();
 
         int cakeID = 1;
 
@@ -38,7 +38,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
 
     @Test
     public void moveOrderToProcessFailTest() {
-        Cookie sessionCookie = loginWithUser("client@gmail.com", "Client007!");
+        Cookie sessionCookie = loginAsClient();
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)
@@ -56,7 +56,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
 
     @Test
     public void moveOrderToProcessSuccessTest() {
-        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+        Cookie sessionCookie = loginAsManager();
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)
@@ -74,7 +74,7 @@ public class RAMoveOrderToProcessTest extends TestBase {
 
     @Test
     public void moveOrderToProcessFail404Test() {
-        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+        Cookie sessionCookie = loginAsManager();
 
         MoveOrderToProcessDto dto = MoveOrderToProcessDto.builder()
                 .confectionerId(2)

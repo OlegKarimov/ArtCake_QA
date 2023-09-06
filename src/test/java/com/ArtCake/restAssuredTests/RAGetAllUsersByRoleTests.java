@@ -1,14 +1,17 @@
 package com.ArtCake.restAssuredTests;
+
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
+
 public class RAGetAllUsersByRoleTests extends TestBase {
 
     @Test
     public void testGetAllUsersByRole200() {
         String role = "CONFECTIONER";
-        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+        Cookie sessionCookie = loginAsManager();
 
         given()
                 .cookie(sessionCookie)
@@ -21,7 +24,6 @@ public class RAGetAllUsersByRoleTests extends TestBase {
 
     @Test
     public void testGetAllUsersByRole401() {
-
         String role = "CONFECTIONER";
 
         given()
@@ -34,9 +36,8 @@ public class RAGetAllUsersByRoleTests extends TestBase {
 
     @Test
     public void testGetAllUsersByRole404() {
-
         String nonExistentRole = "NON_EXISTENT_ROLE";
-        Cookie sessionCookie = loginWithUser("manager@mail.com", "Manager007!");
+        Cookie sessionCookie = loginAsManager();
 
         given()
                 .cookie(sessionCookie)

@@ -11,18 +11,15 @@ public class RAUpdateCakeTests extends TestBase {
 
     @Test
     public void updateCakeByIdSuccessfulTest() {
-
         int cakeId = 1;
+        Cookie sessionCookie = loginAsManager();
+
         CakeUpdateRequestDto cakeUpdateRequestDto = CakeUpdateRequestDto.builder()
                 .name("vanilla-cupcake")
                 .ingredients("sugar, butter, eggs")
                 .price(32.87)
                 .state("CREATED")
                 .build();
-        String username = ("manager@mail.com");
-        String password = ("Manager007!");
-        Cookie sessionCookie = loginWithUser(username, password);
-
 
         given()
                 .cookie(sessionCookie)
@@ -37,17 +34,15 @@ public class RAUpdateCakeTests extends TestBase {
 
     @Test
     public void updateCakeWithUserAccessError403Test() {
+        Cookie sessionCookie = loginAsClient();
         int cakeId = 1;
+
         CakeUpdateRequestDto cakeUpdateRequestDto = CakeUpdateRequestDto.builder()
                 .name("vanilla-cupcake")
                 .ingredients("sugar, butter, eggs")
                 .price(32.87)
                 .state("CREATED")
                 .build();
-        String username = ("client@gmail.com");
-        String password = ("Client007!");
-
-        Cookie sessionCookie = loginWithUser(username, password);
 
         given()
                 .cookie(sessionCookie)
