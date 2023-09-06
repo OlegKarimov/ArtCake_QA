@@ -11,8 +11,8 @@ import lombok.ToString;
 @Builder
 public class LoginResponseDto {
 
-    private String username;
-    private String password;
+    private String message;
+
 
 
 }
