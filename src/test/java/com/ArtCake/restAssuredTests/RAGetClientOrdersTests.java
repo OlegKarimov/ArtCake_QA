@@ -1,6 +1,6 @@
 package com.ArtCake.restAssuredTests;
+import com.ArtCake.dto.OrderRequestDto;
 
-import com.ArtCake.Users.dto.OrderRequestDto;
 import io.restassured.http.Cookie;
 import org.testng.annotations.Test;
 
