@@ -22,6 +22,7 @@
             <class name="com.ArtCake.restAssuredTests.RACakeAddToAssortmentTests" />
             <class name="com.ArtCake.restAssuredTests.RACakesGetByCategoryTests" />
             <class name="com.ArtCake.restAssuredTests.RARegistrationTests" />
+
         </classes>
     </test>
 
