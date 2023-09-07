@@ -7,6 +7,7 @@
 
             <class name="com.ArtCake.restAssuredTests.RALoginTests" />
             <class name="com.ArtCake.restAssuredTests.RALogoutTests" />
+            <class name="com.ArtCake.restAssuredTests.RAUpdateUserTests" />
             <class name="com.ArtCake.restAssuredTests.RAGetAllUsersByRoleTests" />
             <class name="com.ArtCake.restAssuredTests.RAGettingProfileTests" />
             <class name="com.ArtCake.restAssuredTests.RAGetManagerOrdersTests" />
