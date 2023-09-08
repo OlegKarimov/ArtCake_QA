@@ -1,6 +1,5 @@
 package com.ArtCake.restAssuredTests;
 
-import com.ArtCake.dto.CakeSalesRatingDto;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
