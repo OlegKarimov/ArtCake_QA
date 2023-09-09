@@ -13,7 +13,8 @@ public class CakeCreateRequestDto {
     private String name;
     private String ingredients;
     private Double price;
-    private String state;
     private String category;
+    private String state;
+
 
 }

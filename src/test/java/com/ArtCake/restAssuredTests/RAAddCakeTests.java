@@ -3,6 +3,7 @@ package com.ArtCake.restAssuredTests;
 import com.ArtCake.dto.CakeCreateRequestDto;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.UUID;
@@ -11,15 +12,22 @@ import static io.restassured.RestAssured.given;
 
 public class RAAddCakeTests extends TestBase {
 
+
     @Test
     public void createCakeSuccessTest() {
+        given()
+
+                .when()
+                .post("/api/logout")
+                .then();
+
         Cookie sessionCookie = loginAsManager();
 
         CakeCreateRequestDto dto = CakeCreateRequestDto.builder()
                 .name("blueberry-cupcake-" + UUID.randomUUID())
                 .ingredients("milk,egg,salt...")
-                .category("CUPCAKES")
                 .price(70.5)
+                .category("CUPCAKES")
                 .state("CREATED")
                 .build();
 

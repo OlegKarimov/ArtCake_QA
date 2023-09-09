@@ -7,23 +7,22 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RAUpdateUserTests extends TestBase{
+public class RAUpdateUserTests extends TestBase {
 
     @Test
     public void updateUserTest200() {
-        int userId = 1;
+        int userId =3;
         Cookie sessionCookie = loginAsManager();
 
         UpdateUserDto updateUserDto = UpdateUserDto.builder()
-                .houseNumber(12)
-                .phoneNumber("+4917622334455")
+                .town("Kiel")
+                .zipCode("22339")
+                .street("StrandStrasse")
+                .houseNumber(10)
+                .phoneNumber("+4917688776655")
+                .state("NOT_CONFIRMED")
                 .role("CONFECTIONER")
-                .street("Tondorfer str.")
-                .zipCode("22112")
-                .town("Berlin")
-                .state("CONFIRMED")
                 .build();
-
         given()
                 .cookie(sessionCookie)
                 .queryParam("user-id", userId)
