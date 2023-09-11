@@ -44,7 +44,7 @@ To implement this project, we employ the following technologies: Java 17, Gradle
 * [General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
 * * Gradle Wrapper
     ![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/test%20coverage.png)
-* Jenkins
+* [Jenkins](https://drive.google.com/drive/folders/1Get40_tXR1Wmo7HLJSCK34BudPxlEzGN?usp=sharing)
 * [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
 * [Logger](https://drive.google.com/file/d/1GUH7oS-nrXQEUSlXimil_jF8ypImt6I3/view?usp=sharing)
 * [Pairwise](https://docs.google.com/spreadsheets/d/1zQ0h7WvOutvFR0TaTQO4spvBDTTDVvL-/edit#gid=1885963630)
