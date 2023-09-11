@@ -6,7 +6,6 @@ import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 
 public class RAMoveOrderToDeclineTests extends TestBase {

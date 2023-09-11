@@ -1,15 +1,11 @@
 package com.ArtCake.restAssuredTests;
 
-
 import com.ArtCake.dto.RegistrationRequestDto;
 import com.ArtCake.dto.RegistrationResponseDto;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
-
 import java.util.UUID;
-
 import static io.restassured.RestAssured.given;
-
 
 public class RARegistrationTests {
 

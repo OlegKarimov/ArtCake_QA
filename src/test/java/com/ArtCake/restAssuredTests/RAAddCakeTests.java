@@ -3,7 +3,6 @@ package com.ArtCake.restAssuredTests;
 import com.ArtCake.dto.CakeCreateRequestDto;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.UUID;

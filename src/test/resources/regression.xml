@@ -4,7 +4,6 @@
 
     <test name="Regression" >
         <classes>
-
             <class name="com.ArtCake.restAssuredTests.RALoginTests" />
             <class name="com.ArtCake.restAssuredTests.RALogoutTests" />
             <class name="com.ArtCake.restAssuredTests.RAUpdateUserTests" />
@@ -19,11 +18,11 @@
             <class name="com.ArtCake.restAssuredTests.RAGetCakeTests" />
             <class name="com.ArtCake.restAssuredTests.RAUpdateCakeTests" />
             <class name="com.ArtCake.restAssuredTests.RAGetAllCakesTests" />
-            <class name="com.ArtCake.restAssuredTests.RACakeAddToAssortmentTests" />
+            <class name="com.ArtCake.restAssuredTests.RAAddCakeTests" />
+            <class name="com.ArtCake.restAssuredTests.RACakeRatingTests" />
             <class name="com.ArtCake.restAssuredTests.RACakesGetByCategoryTests" />
             <class name="com.ArtCake.restAssuredTests.RARegistrationTests" />
-
+            <class name="com.ArtCake.restAssuredTests.RAFinishedOrderTests" />
         </classes>
     </test>
-
 </suite>
