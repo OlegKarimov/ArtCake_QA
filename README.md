@@ -77,3 +77,6 @@ Password: Manager007!
 ## Manager
 Email: manager@mail.com
 Password: Manager007!
+## 📝 License
+
+Copyright © 2023 [Dmytro Sainozhenko](https://github.com/Sainozhenko).<br />
