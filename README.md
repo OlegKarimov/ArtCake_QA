@@ -37,10 +37,10 @@ implementation 'ch.qos.logback:logback-classic:1.4.11'
 ![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/test%20coverage.png)
 * Jenkins
 * TestLink
-[Test Plan Report](https://drive.google.com/file/d/1srbKHofVE97yTG6mZHDZ7fMvi9I4k_5I/view?usp=sharing)
-[Test Plan Execution Report](https://drive.google.com/file/d/1LnPq4JpGQjOs89F_q_WbvYf-wNmiAe4L/view?usp=sharing)
-[General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
-[Requirements Based Report](https://drive.google.com/file/d/1FZiN9wOGxqk_U9-wMzZmyjYtgNmR2bC8/view?usp=sharing)
+* ..[Test Plan Report](https://drive.google.com/file/d/1srbKHofVE97yTG6mZHDZ7fMvi9I4k_5I/view?usp=sharing)
+* ..[Test Plan Execution Report](https://drive.google.com/file/d/1LnPq4JpGQjOs89F_q_WbvYf-wNmiAe4L/view?usp=sharing)
+* ..[General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
+* ..[Requirements Based Report](https://drive.google.com/file/d/1FZiN9wOGxqk_U9-wMzZmyjYtgNmR2bC8/view?usp=sharing)
 * [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
 * [Bug Report](https://drive.google.com/file/d/1lGPW8iyS4zUpa70Hw-4em2RsYXvpv1Mi/view?usp=sharing)
 * [ExhaustiveTesting](https://docs.google.com/spreadsheets/d/1PtDNVdbnNxmiD69ewNuRi4A8x2tJqN62/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
