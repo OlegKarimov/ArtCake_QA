@@ -9,45 +9,51 @@ To implement this project, we employ the following technologies: Java 17, Gradle
 </strong>
 
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/> </a> </p>
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sainozhenko&show_icons=true&locale=en&layout=compact" alt="sainozhenko" /></p>
+<div align="center">
+    <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+    </a>
+    <a href="https://www.java.com" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/>
+    </a>
+    <a href="https://www.jenkins.io" target="_blank" rel="noreferrer">
+        <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/>
+    </a>
+    <a href="https://rest-assured.io/" target="_blank" rel="noreferrer">
+        <img src="https://rest-assured.io/img/logo-transparent.png" alt="restassured" width="40" height="40"/>
+    </a>
+</div>
 
 ### Dependencies:
 
 ```gradle
-implementation 'org.testng:testng:7.8.0'
-implementation 'io.rest-assured:rest-assured:5.3.1'
-implementation 'com.google.code.gson:gson:2.10.1'
-compileOnly 'org.projectlombok:lombok:1.18.28'
-annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    implementation 'org.testng:testng:7.8.0'
+    implementation 'io.rest-assured:rest-assured:5.3.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
 
-testCompileOnly 'org.projectlombok:lombok:1.18.28'
-testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
-implementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
-implementation 'io.cucumber:cucumber-java:7.13.0'
-implementation 'io.cucumber:cucumber-junit:7.13.0'
-implementation 'ch.qos.logback:logback-classic:1.4.11'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 ``` 
 
 ## Technology:
 - **Stack**: JAVA 17, RestAssured, Gradle, IntelliJ IDEA 2023. 
-* [Logger](https://drive.google.com/file/d/1GUH7oS-nrXQEUSlXimil_jF8ypImt6I3/view?usp=sharing)
-* Gradle Wrapper
-![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/test%20coverage.png)
-* Jenkins
-* TestLink
-* ..[Test Plan Report](https://drive.google.com/file/d/1srbKHofVE97yTG6mZHDZ7fMvi9I4k_5I/view?usp=sharing)
-* ..[Test Plan Execution Report](https://drive.google.com/file/d/1LnPq4JpGQjOs89F_q_WbvYf-wNmiAe4L/view?usp=sharing)
-* ..[General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
-* ..[Requirements Based Report](https://drive.google.com/file/d/1FZiN9wOGxqk_U9-wMzZmyjYtgNmR2bC8/view?usp=sharing)
-* [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
 * [Bug Report](https://drive.google.com/file/d/1lGPW8iyS4zUpa70Hw-4em2RsYXvpv1Mi/view?usp=sharing)
-* [ExhaustiveTesting](https://docs.google.com/spreadsheets/d/1PtDNVdbnNxmiD69ewNuRi4A8x2tJqN62/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
 * [Combinatorics](https://docs.google.com/spreadsheets/d/1zQ0h7WvOutvFR0TaTQO4spvBDTTDVvL-/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
+* [ExhaustiveTesting](https://docs.google.com/spreadsheets/d/1PtDNVdbnNxmiD69ewNuRi4A8x2tJqN62/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
+* [General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
+* * Gradle Wrapper
+    ![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/test%20coverage.png)
+* Jenkins
+* [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
+* [Logger](https://drive.google.com/file/d/1GUH7oS-nrXQEUSlXimil_jF8ypImt6I3/view?usp=sharing)
 * [Pairwise](https://docs.google.com/spreadsheets/d/1zQ0h7WvOutvFR0TaTQO4spvBDTTDVvL-/edit#gid=1885963630)
+* [Requirements Based Report](https://drive.google.com/file/d/1FZiN9wOGxqk_U9-wMzZmyjYtgNmR2bC8/view?usp=sharing)
 * [StateTransitionDiagrams](https://drive.google.com/file/d/1jCZeOHxK_pK9AB5j_re0mh_bIjYfGGzv/view)
 ![stateTransitionDiagram.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/stateTransitionDiagram.png)
+* Test Link
+* [Test Plan Report](https://drive.google.com/file/d/1srbKHofVE97yTG6mZHDZ7fMvi9I4k_5I/view?usp=sharing)
+* [Test Plan Execution Report](https://drive.google.com/file/d/1LnPq4JpGQjOs89F_q_WbvYf-wNmiAe4L/view?usp=sharing)
 
 
 ## OurTeam:
@@ -60,14 +66,17 @@ implementation 'ch.qos.logback:logback-classic:1.4.11'
 
 
 ### Users:
-## Manager
-Email: manager@mail.com
-Password: Manager007!
+## Client
+Email: client@gmail.com
+Password: Client007!
 
 ## Confectioner
 Email: konditerow@gmail.com
 Password: Manager007!
 
-## Client
-Email: client@gmail.com
-Password: Client007!
+## Manager
+Email: manager@mail.com
+Password: Manager007!
+## 📝 License
+
+Copyright © 2023 [Dmytro Sainozhenko](https://github.com/Sainozhenko).<br />
