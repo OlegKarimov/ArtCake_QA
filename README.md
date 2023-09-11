@@ -46,7 +46,7 @@ To implement this project, we employ the following technologies: Java 17, Gradle
 * [ExhaustiveTesting](https://docs.google.com/spreadsheets/d/1PtDNVdbnNxmiD69ewNuRi4A8x2tJqN62/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
 * [General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
 * [Gradle Wrapper](https://drive.google.com/drive/folders/10U0wDVkZdf_AqSzBhklEzfcTtJtBdhlq?usp=sharing)
-    ![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/test%20coverage.png)
+    ![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/dev/src/test/resources/git/test%20coverage.png)
 * [Jenkins](https://drive.google.com/drive/folders/1Get40_tXR1Wmo7HLJSCK34BudPxlEzGN?usp=sharing)
 * [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
 * [Logger](https://drive.google.com/file/d/1GUH7oS-nrXQEUSlXimil_jF8ypImt6I3/view?usp=sharing)
