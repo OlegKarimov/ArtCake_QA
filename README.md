@@ -78,6 +78,5 @@ Password: Manager007!
 Email: manager@mail.com
 Password: Manager007!
 ## 📝 License
-MIT License
-
+Apache License
 Copyright © [2023]<br />
