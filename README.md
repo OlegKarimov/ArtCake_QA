@@ -2,11 +2,10 @@
   <img alt="logo" src="src/test/resources/git/logo.png">
 </h4>
 <strong>
-About Project:
-This project helps automate the business of offline cake shops or online shops, for example, startups. Your clients can create orders, and you can manage and work remotely, control your employees and orders. This is the future, a modern way, to make your business more successful.
-* For realization of this project we use next technology: Java 17, Gradle, TestNG, Rest Assured, Git, Jenkins. And did extension connect Logger and Gradle Wrapper, with documentation we work with: TestLink, Jira.
-Created additionally tables of combinatorics and exhaustive, stateTransitionDiagrams.
-Off course we was have a problems with working GitHub and many branches, merges, add right dependencies in project, DB tables in BackEnd and correct right tests, and little bit with connect Gradle Wrapper.
+<h3 align="left">About Project:</h3>
+This project aims to streamline the operations of both brick-and-mortar and online cake shops, including startups. Your clients can place orders, while you can efficiently manage and work remotely, oversee your employees, and handle orders. This represents the future—a modern approach to making your business more successful.
+
+To implement this project, we employ the following technologies: Java 17, Gradle, TestNG, Rest Assured, Git, and Jenkins. Additionally, we have integrated Logger and Gradle Wrapper. Our documentation tools include TestLink and Jira. We have also created tables for combinatorics and exhaustive analyses, as well as state transition diagrams. Naturally, we encountered challenges while working with GitHub, managing numerous branches, performing merges, ensuring correct dependencies in the project, establishing database tables in the BackEnd, writing accurate tests, and configuring the Gradle Wrapper.
 </strong>
 
 <h3 align="left">Languages and Tools:</h3>
@@ -38,7 +37,12 @@ implementation 'ch.qos.logback:logback-classic:1.4.11'
 ![logo.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/test%20coverage.png)
 * Jenkins
 * TestLink
+[Test Plan Report](https://drive.google.com/file/d/1srbKHofVE97yTG6mZHDZ7fMvi9I4k_5I/view?usp=sharing)
+[Test Plan Execution Report](https://drive.google.com/file/d/1LnPq4JpGQjOs89F_q_WbvYf-wNmiAe4L/view?usp=sharing)
+[General Test Plan Metrics](https://drive.google.com/file/d/1l5gXy35zWAKsr7RjzLtw9ZZZeCBFfChg/view?usp=sharing)
+[Requirements Based Report](https://drive.google.com/file/d/1FZiN9wOGxqk_U9-wMzZmyjYtgNmR2bC8/view?usp=sharing)
 * [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
+* [Bug Report](https://drive.google.com/file/d/1lGPW8iyS4zUpa70Hw-4em2RsYXvpv1Mi/view?usp=sharing)
 * [ExhaustiveTesting](https://docs.google.com/spreadsheets/d/1PtDNVdbnNxmiD69ewNuRi4A8x2tJqN62/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
 * [Combinatorics](https://docs.google.com/spreadsheets/d/1zQ0h7WvOutvFR0TaTQO4spvBDTTDVvL-/edit?usp=sharing&ouid=108218146103269297215&rtpof=true&sd=true)
 * [Pairwise](https://docs.google.com/spreadsheets/d/1zQ0h7WvOutvFR0TaTQO4spvBDTTDVvL-/edit#gid=1885963630)
