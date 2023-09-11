@@ -14,7 +14,7 @@ public class RACakeAddToAssortmentTests extends TestBase {
 
     @Test
     public void createCakeWithUniqueName() {
-        String productName = "blueberry-cake" + new Date().getTime(); // Генерируем уникальное имя с помощью временной метки
+        String productName = "blueberry-cake" + new Date().getTime();
 
         String requestBody = "{\n" +
                 "  \"name\": \"" + productName + "\",\n" +
@@ -37,7 +37,7 @@ public class RACakeAddToAssortmentTests extends TestBase {
 
     @Test
     public void forbiddenCreateCake() {
-        String productName = "blueberry-cakeFail" + new Date().getTime(); // Генерируем уникальное имя с помощью временной метки
+        String productName = "blueberry-cakeFail" + new Date().getTime();
 
         String requestBody = "{\n" +
                 "  \"name\": \"" + productName + "\",\n" +
