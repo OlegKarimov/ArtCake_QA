@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RALogoutTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:05" hostname="OMEN_UKR" time="0.284">
+  <properties/>
+  <testcase name="logoutFailTest" classname="com.ArtCake.restAssuredTests.RALogoutTests" time="0.022"/>
+  <testcase name="logoutSuccessAsClientTest" classname="com.ArtCake.restAssuredTests.RALogoutTests" time="0.087"/>
+  <testcase name="logoutSuccessAsConditionerTest" classname="com.ArtCake.restAssuredTests.RALogoutTests" time="0.088"/>
+  <testcase name="logoutSuccessAsManagerTest" classname="com.ArtCake.restAssuredTests.RALogoutTests" time="0.08"/>
+  <system-out><![CDATA[22:17:05.176 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test logoutFailTest with parameters:[]
+22:17:05.200 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:05.202 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test logoutSuccessAsClientTest with parameters:[]
+22:17:05.290 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:05.291 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test logoutSuccessAsConditionerTest with parameters:[]
+22:17:05.379 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:05.380 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test logoutSuccessAsManagerTest with parameters:[]
+22:17:05.468 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

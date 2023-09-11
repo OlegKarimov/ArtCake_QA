@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAFinishedOrderTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:08" hostname="OMEN_UKR" time="0.243">
+  <properties/>
+  <testcase name="MovingOrderToFinishedSuccessfulTest" classname="com.ArtCake.restAssuredTests.RAFinishedOrderTests" time="0.086"/>
+  <testcase name="MovingOrderToFinishedWithUnexcitingOrderIdTest" classname="com.ArtCake.restAssuredTests.RAFinishedOrderTests" time="0.078"/>
+  <testcase name="MovingOrderToFinishedWithUserData" classname="com.ArtCake.restAssuredTests.RAFinishedOrderTests" time="0.076"/>
+  <system-out><![CDATA[22:17:08.846 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test MovingOrderToFinishedSuccessfulTest with parameters:[]
+22:17:08.933 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:08.934 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test MovingOrderToFinishedWithUnexcitingOrderIdTest with parameters:[]
+22:17:09.013 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:09.014 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test MovingOrderToFinishedWithUserData with parameters:[]
+22:17:09.090 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

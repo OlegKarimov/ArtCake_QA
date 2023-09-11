@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAMoveOrderToDeclineTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:07" hostname="OMEN_UKR" time="0.431">
+  <properties/>
+  <testcase name="moveOrderToDeclineFail404Test" classname="com.ArtCake.restAssuredTests.RAMoveOrderToDeclineTests" time="0.079"/>
+  <testcase name="moveOrderToDeclineFailTest" classname="com.ArtCake.restAssuredTests.RAMoveOrderToDeclineTests" time="0.079"/>
+  <testcase name="moveOrderToDeclineSuccessTest" classname="com.ArtCake.restAssuredTests.RAMoveOrderToDeclineTests" time="0.086"/>
+  <system-out><![CDATA[22:17:07.546 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test moveOrderToDeclineFail404Test with parameters:[]
+22:17:07.720 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:07.720 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test moveOrderToDeclineFailTest with parameters:[]
+22:17:07.892 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:07.893 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test moveOrderToDeclineSuccessTest with parameters:[]
+22:17:08.072 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

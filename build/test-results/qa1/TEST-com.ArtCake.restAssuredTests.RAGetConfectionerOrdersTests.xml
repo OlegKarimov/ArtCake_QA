@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAGetConfectionerOrdersTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:06" hostname="OMEN_UKR" time="0.098">
+  <properties/>
+  <testcase name="getAllOrdersAsConfectioner200" classname="com.ArtCake.restAssuredTests.RAGetConfectionerOrdersTests" time="0.089"/>
+  <testcase name="getAllOrdersAsConfectioner401" classname="com.ArtCake.restAssuredTests.RAGetConfectionerOrdersTests" time="0.007"/>
+  <system-out><![CDATA[22:17:06.320 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllOrdersAsConfectioner200 with parameters:[]
+22:17:06.410 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:06.411 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllOrdersAsConfectioner401 with parameters:[]
+22:17:06.419 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

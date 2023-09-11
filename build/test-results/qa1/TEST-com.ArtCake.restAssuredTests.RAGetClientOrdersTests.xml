@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAGetClientOrdersTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:06" hostname="OMEN_UKR" time="0.244">
+  <properties/>
+  <testcase name="getAllOrdersForClientAsClient200" classname="com.ArtCake.restAssuredTests.RAGetClientOrdersTests" time="0.082"/>
+  <testcase name="getAllOrdersForClientAsConfectioner200" classname="com.ArtCake.restAssuredTests.RAGetClientOrdersTests" time="0.082"/>
+  <testcase name="getAllOrdersForClientAsManager200" classname="com.ArtCake.restAssuredTests.RAGetClientOrdersTests" time="0.077"/>
+  <system-out><![CDATA[22:17:06.420 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllOrdersForClientAsClient200 with parameters:[]
+22:17:06.503 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:06.504 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllOrdersForClientAsConfectioner200 with parameters:[]
+22:17:06.586 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:06.587 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllOrdersForClientAsManager200 with parameters:[]
+22:17:06.665 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

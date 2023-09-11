@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAGetAllCakesTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:08" hostname="OMEN_UKR" time="0.158">
+  <properties/>
+  <testcase name="getAllCakesFail400" classname="com.ArtCake.restAssuredTests.RAGetAllCakesTests" time="0.076"/>
+  <testcase name="getAllCakesSuccess" classname="com.ArtCake.restAssuredTests.RAGetAllCakesTests" time="0.08"/>
+  <system-out><![CDATA[22:17:08.357 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllCakesFail400 with parameters:[]
+22:17:08.433 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:08.434 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getAllCakesSuccess with parameters:[]
+22:17:08.515 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

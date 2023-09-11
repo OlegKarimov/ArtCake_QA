@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAUpdateUserTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:05" hostname="OMEN_UKR" time="0.175">
+  <properties/>
+  <testcase name="updateUserTest200" classname="com.ArtCake.restAssuredTests.RAUpdateUserTests" time="0.163"/>
+  <testcase name="updateUserTest401" classname="com.ArtCake.restAssuredTests.RAUpdateUserTests" time="0.01"/>
+  <system-out><![CDATA[22:17:05.470 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test updateUserTest200 with parameters:[]
+22:17:05.633 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:05.635 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test updateUserTest401 with parameters:[]
+22:17:05.645 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

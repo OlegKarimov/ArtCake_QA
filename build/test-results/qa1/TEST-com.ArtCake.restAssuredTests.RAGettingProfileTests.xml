@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAGettingProfileTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:05" hostname="OMEN_UKR" time="0.261">
+  <properties/>
+  <testcase name="gettingProfileFail404Test" classname="com.ArtCake.restAssuredTests.RAGettingProfileTests" time="0.088"/>
+  <testcase name="gettingProfileSuccessTest" classname="com.ArtCake.restAssuredTests.RAGettingProfileTests" time="0.085"/>
+  <system-out><![CDATA[22:17:05.843 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test gettingProfileFail404Test with parameters:[]
+22:17:06.035 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:06.036 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test gettingProfileSuccessTest with parameters:[]
+22:17:06.208 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RARegistrationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:08" hostname="OMEN_UKR" time="0.115">
+  <properties/>
+  <testcase name="registrationSuccessTest" classname="com.ArtCake.restAssuredTests.RARegistrationTests" time="0.093"/>
+  <testcase name="registrationWithWrongFormatEmailTest" classname="com.ArtCake.restAssuredTests.RARegistrationTests" time="0.022"/>
+  <system-out><![CDATA[CLIENT
+{
+    "errors": [
+        {
+            "field": "zipCode",
+            "message": "Zip code is required"
+        },
+        {
+            "field": "email",
+            "message": "Invalid email format",
+            "rejectedValue": "arkemail.com"
+        }
+    ]
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

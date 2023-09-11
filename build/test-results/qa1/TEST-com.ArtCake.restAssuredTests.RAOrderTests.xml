@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAOrderTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:08" hostname="OMEN_UKR" time="0.097">
+  <properties/>
+  <testcase name="addNewOrderWithoutAuthenticationTest" classname="com.ArtCake.restAssuredTests.RAOrderTests" time="0.012"/>
+  <testcase name="creatingOrderSuccessfulTest" classname="com.ArtCake.restAssuredTests.RAOrderTests" time="0.084"/>
+  <system-out><![CDATA[22:17:08.072 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test addNewOrderWithoutAuthenticationTest with parameters:[]
+22:17:08.084 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:08.085 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test creatingOrderSuccessfulTest with parameters:[]
+22:17:08.170 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

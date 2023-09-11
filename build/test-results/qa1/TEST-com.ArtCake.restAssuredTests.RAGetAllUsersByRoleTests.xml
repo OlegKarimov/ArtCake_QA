@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAGetAllUsersByRoleTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:05" hostname="OMEN_UKR" time="0.193">
+  <properties/>
+  <testcase name="testGetAllUsersByRole200" classname="com.ArtCake.restAssuredTests.RAGetAllUsersByRoleTests" time="0.095"/>
+  <testcase name="testGetAllUsersByRole401" classname="com.ArtCake.restAssuredTests.RAGetAllUsersByRoleTests" time="0.007"/>
+  <testcase name="testGetAllUsersByRole404" classname="com.ArtCake.restAssuredTests.RAGetAllUsersByRoleTests" time="0.089"/>
+  <system-out><![CDATA[22:17:05.648 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test testGetAllUsersByRole200 with parameters:[]
+22:17:05.743 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:05.744 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test testGetAllUsersByRole401 with parameters:[]
+22:17:05.751 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:05.752 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test testGetAllUsersByRole404 with parameters:[]
+22:17:05.842 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

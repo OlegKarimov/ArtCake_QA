@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAGetCakeTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:08" hostname="OMEN_UKR" time="0.02">
+  <properties/>
+  <testcase name="getCakeByIDSuccessfulTest" classname="com.ArtCake.restAssuredTests.RAGetCakeTests" time="0.011"/>
+  <testcase name="getCakeByIDTestError404" classname="com.ArtCake.restAssuredTests.RAGetCakeTests" time="0.007"/>
+  <system-out><![CDATA[22:17:08.171 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getCakeByIDSuccessfulTest with parameters:[]
+Wildberries-Cheesecake
+22:17:08.182 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:08.184 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test getCakeByIDTestError404 with parameters:[]
+22:17:08.192 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

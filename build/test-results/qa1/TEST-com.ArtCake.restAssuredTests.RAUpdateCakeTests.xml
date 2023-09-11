@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ArtCake.restAssuredTests.RAUpdateCakeTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-11T20:17:08" hostname="OMEN_UKR" time="0.164">
+  <properties/>
+  <testcase name="updateCakeByIdSuccessfulTest" classname="com.ArtCake.restAssuredTests.RAUpdateCakeTests" time="0.086"/>
+  <testcase name="updateCakeWithUserAccessError403Test" classname="com.ArtCake.restAssuredTests.RAUpdateCakeTests" time="0.077"/>
+  <system-out><![CDATA[22:17:08.192 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test updateCakeByIdSuccessfulTest with parameters:[]
+22:17:08.278 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+22:17:08.279 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Start test updateCakeWithUserAccessError403Test with parameters:[]
+22:17:08.356 [Test worker] INFO  c.ArtCake.restAssuredTests.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
