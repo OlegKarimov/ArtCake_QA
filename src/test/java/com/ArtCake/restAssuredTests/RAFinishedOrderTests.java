@@ -47,6 +47,6 @@ public class RAFinishedOrderTests extends TestBase {
                 .when()
                 .put("/api/orders/" + orderId + "/done?" + orderId)
                 .then()
-                .assertThat().statusCode(404);
+                .assertThat().statusCode(200);
     }
 }
