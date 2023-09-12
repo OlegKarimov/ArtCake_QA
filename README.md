@@ -51,11 +51,12 @@ To implement this project, we employ the following technologies: Java 17, Gradle
 * [JIRA](https://ait-learn.atlassian.net/jira/software/projects/G4/boards/17)
 * [Logger](https://drive.google.com/file/d/1GUH7oS-nrXQEUSlXimil_jF8ypImt6I3/view?usp=sharing)
 * [Pairwise](https://docs.google.com/spreadsheets/d/1zQ0h7WvOutvFR0TaTQO4spvBDTTDVvL-/edit#gid=1885963630)
+* [Test Plan Report](https://drive.google.com/file/d/1ec2rXMukHyA8yxXfFHcbM-6RYBAKW1XB/view?usp=sharing)
+* [Requirements](https://drive.google.com/file/d/185d8wkcWrj9YqV4vkfv6SmoPuCKfOTtR/view?usp=sharing)
 * [Requirements Based Report](https://drive.google.com/file/d/1FZiN9wOGxqk_U9-wMzZmyjYtgNmR2bC8/view?usp=sharing)
 * [StateTransitionDiagrams](https://drive.google.com/file/d/1jCZeOHxK_pK9AB5j_re0mh_bIjYfGGzv/view)
 ![stateTransitionDiagram.png](https://github.com/OlegKarimov/ArtCake_QA/blob/features/G4-138-Readme/src/test/resources/git/stateTransitionDiagram.png)
 * [Test_Link](https://drive.google.com/file/d/1mUzNpV2f6yLdXY6hz_AaR4SRDU4aG2Ck/view?usp=sharing)
-* [Test Plan Report](https://drive.google.com/file/d/1srbKHofVE97yTG6mZHDZ7fMvi9I4k_5I/view?usp=sharing)
 * [Test Plan Execution Report](https://drive.google.com/file/d/1LnPq4JpGQjOs89F_q_WbvYf-wNmiAe4L/view?usp=sharing)
 
 
